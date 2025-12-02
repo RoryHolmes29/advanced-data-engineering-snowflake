@@ -4,11 +4,11 @@ on:
   pull_request:
     types: [closed]
     branches:
-      - staging
+      - STAGING
       - main
   push:
     branches:
-      - staging
+      - STAGING
       - main
 
 jobs:
@@ -34,9 +34,9 @@ jobs:
         run: |
           TARGET_BRANCH="${GITHUB_BASE_REF:-${GITHUB_REF#refs/heads/}}"
           
-          if [[ $TARGET_BRANCH == "staging" ]]; then
-            echo "DEPLOY_ENV=staging" >> $GITHUB_ENV
-            echo "Environment set to staging"
+          if [[ $TARGET_BRANCH == "STAGING" ]]; then
+            echo "DEPLOY_ENV=STAGING" >> $GITHUB_ENV
+            echo "Environment set to STAGING"
           elif [[ $TARGET_BRANCH == "main" ]]; then
             echo "DEPLOY_ENV=prod" >> $GITHUB_ENV
             echo "Environment set to production"
