@@ -36,7 +36,7 @@ jobs:
           
           if [[ $TARGET_BRANCH == "STAGING" ]]; then
             echo "DEPLOY_ENV=STAGING" >> $GITHUB_ENV
-            echo "Environment set to staging"
+            echo "Environment set to STAGING"
           elif [[ $TARGET_BRANCH == "main" ]]; then
             echo "DEPLOY_ENV=prod" >> $GITHUB_ENV
             echo "Environment set to production"
